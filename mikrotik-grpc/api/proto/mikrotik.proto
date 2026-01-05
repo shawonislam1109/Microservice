@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+package mikrotik;
+
+option go_package = "github.com/yourname/mikrotik-grpc/api/proto";
+
+// The main service definition
+service MikroTikService {
+  rpc GetPPPoEActive (GetPPPoEActiveRequest) returns (PPPoEUsers);
+  rpc GetPPPoEUser (GetPPPoEUserRequest) returns (PPPoEUser);
+  rpc CreatePPPoEUser (CreatePPPoEUserRequest) returns (Response);
+  rpc UpdatePPPoEUser (UpdatePPPoEUserRequest) returns (PPPoEUser);
+  rpc RemovePPPoEUser (RemovePPPoEUserRequest) returns (Response);
+  rpc CheckConnection (CheckConnectionRequest) returns (Response);
+}
+
+// Message definitions for requests and responses
+
+message Connection {
+  string host = 1;
+  string user = 2;
+  string pass = 3;
+}
+
+message GetPPPoEActiveRequest {
+  Connection conn = 1;
+}
+
+message GetPPPoEUserRequest {
+  Connection conn = 1;
+  string name = 2;
+}
+
+message CreatePPPoEUserRequest {
+  Connection conn = 1;
+  string name = 2;
+  string password = 3;
+  string profile = 4;
+}
+
+message UpdatePPPoEUserRequest {
+  Connection conn = 1;
+  string name = 2;
+  map<string, string> fields_to_update = 3;
+}
+
+message RemovePPPoEUserRequest {
+  Connection conn = 1;
+  string name = 2;
+}
+
+message CheckConnectionRequest {
+  Connection conn = 1;
+}
+
+message PPPoEUser {
+  map<string, string> attributes = 1;
+}
+
+message PPPoEUsers {
+  repeated PPPoEUser users = 1;
+}
+
+message Response {
+  bool success = 1;
+  string message = 2;
+}

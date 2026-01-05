@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package mikrotik;
+
+option go_package = "learn-go-lang/pkg/mikrotik";
+
+service MikroTik {
+  rpc GetRouterInfo (RouterRequest) returns (RouterInfo);
+}
+
+message RouterRequest {
+  string ip_address = 1;
+}
+
+message RouterInfo {
+  string hostname = 1;
+  string version = 2;
+}
