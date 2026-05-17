@@ -2,8 +2,8 @@ package main
 
 import (
 	"log"
-	"github.com/yourname/mikrotik-grpc/internal/handler"
-	"github.com/yourname/mikrotik-grpc/internal/server"
+	"isp-management-system/internal/handler"
+	"isp-management-system/internal/server"
 )
 
 func main() {

@@ -6,9 +6,9 @@ import (
 	"sync"
 	"time"
 
-	pb "github.com/yourname/mikrotik-grpc/api/proto"
-	"github.com/yourname/mikrotik-grpc/internal/client"
-	"github.com/yourname/mikrotik-grpc/internal/service"
+	pb "isp-management-system/api/proto"
+	"isp-management-system/internal/client"
+	"isp-management-system/internal/service"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

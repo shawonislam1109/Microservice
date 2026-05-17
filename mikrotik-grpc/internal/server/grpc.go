@@ -2,8 +2,8 @@ package server
 
 import (
 	"log"
-	pb "github.com/yourname/mikrotik-grpc/api/proto"
-	"github.com/yourname/mikrotik-grpc/internal/handler"
+	pb "isp-management-system/api/proto"
+	"isp-management-system/internal/handler"
 	"net"
 
 	"google.golang.org/grpc"

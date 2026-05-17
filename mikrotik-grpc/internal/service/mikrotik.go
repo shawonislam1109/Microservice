@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/yourname/mikrotik-grpc/internal/client"
+	"isp-management-system/internal/client"
 )
 
 type MikrotikService struct {

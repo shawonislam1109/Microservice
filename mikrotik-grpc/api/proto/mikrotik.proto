@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package mikrotik;
 
-option go_package = "github.com/yourname/mikrotik-grpc/api/proto";
+option go_package = "isp-management-system/api/proto";
 
 // The main service definition
 service MikroTikService {
